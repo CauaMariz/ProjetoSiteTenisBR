@@ -57,6 +57,7 @@
       padding: 5px;
       color: rgb(255, 240, 24);
     }
+
     .cabecalho li {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       margin-left: 5vh;
@@ -75,6 +76,7 @@
       padding: 5px;
       color: rgb(255, 240, 24);
     }
+
     .menu li {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       margin-left: 5vh;
@@ -93,6 +95,7 @@
       padding: 5px;
       color: rgb(255, 240, 24);
     }
+
     .bloco {
       position: relative;
       float: right;
@@ -203,19 +206,17 @@
     }
 
     .footer {
-      display: inline-flex;
-      height: auto;
-      min-height: 80px;
-      bottom: 0;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
       background-color: rgb(255, 240, 24);
-      justify-content: space-between;
+      justify-content: space-around;
       margin-top: 10vh;
-      align-content: space-around;
     }
 
     .footer ul {
       list-style: none;
-      display: inline-block;
+      display: block;
       align-content: space-between;
       margin-left: -5vw;
     }
@@ -234,7 +235,6 @@
     .mainSection {
       display: flex;
       width: 100%;
-
       align-items: center;
       justify-content: center;
     }
@@ -245,47 +245,46 @@
       min-width: 400px;
       min-height: 400px;
       height: 100%;
-      margin: 0 auto;
-      background-color: rgb(255, 240, 24);
+      padding: 3vw 4vw 2vw 4vw;
+      box-shadow: 5px 5px 10px 0px gray;
       justify-content: center;
       align-items: start;
-
-      border-radius: 20px;
-      box-shadow: 1px 1px 16px 1px gray;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
     }
 
     .loginForm {
-      margin-top: 10vh;
       justify-content: space-between;
-    
     }
 
     .loginForm #inputEmail,
     #inputSenha {
       display: block;
-      margin: 0 auto;
-      background-color: whitesmoke;
-      justify-self: center;
-
-      padding: 12px;
-      width: 220px;
-      border: 1px solid gray;
-      border-radius: 4px;
+      justify-self: start;
+      padding: 12px 12px 12px 0;
+      width: 240px;
+      border: none;
       margin-bottom: 2vh;
+      border-bottom: 1px solid grey;
+    }
+
+    .loginForm input::placeholder {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: left;
     }
 
     .loginForm button {
       background-color: whitesmoke;
       padding: 10px;
-      width: 245px;
+      width: 266px;
       border: 1px solid gray;
-      border-radius: 4px;
+      border-radius: 16px;
       cursor: pointer;
       font-weight: 600;
       color: black;
       transition: .5s;
       display: block;
-      margin: 0 auto;
+
     }
 
     .loginForm button:hover {
@@ -295,16 +294,76 @@
       scale: 1.033;
     }
 
-    .loginForm li {
-      
-      display: inline;
+    .loginForm .LIs {
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+      padding: 0;
+      margin-top: 5vh;
+      gap: 70px;
+    }
+
+    .loginForm .LIs li {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    .loginForm .LIs{
-      margin-top: 5vh;
-    }
-    .title{
+
+
+    .title {
       cursor: pointer;
+    }
+
+    .titleForm {
+      display: flex;
+      margin: 0;
+      justify-self: center;
+      font-size: 5vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin-bottom: 5vh;
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    .containerOla {
+      display: flex;
+      width: 350px;
+      word-wrap: normal;
+      min-width: 200px;
+      min-height: 400px;
+      height: 100%;
+      padding: 3vw 4vw 2vw 4vw;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      box-shadow: -5px 5px 10px 0px gray;
+      justify-content: center;
+      align-items: start;
+    }
+
+    .fraseCadastro {
+      max-width: 260px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 18px;
+    }
+    
+    .titleOla {
+      max-width: 350px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-size: 5vh;
+      margin-top: -.2vh;
+    }
+    .btnIrCadastro{
+      padding: 5px;
+      border-radius: 10px;
+      border: none;
+      box-shadow: 1px 1px 6px grey;
+      transition: .5s;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      cursor: pointer;
+    }
+    .btnIrCadastro:hover{
+      transition: .5s;
+      background-color: rgb(26, 152, 255);
     }
   </style>
 </head>
@@ -317,7 +376,7 @@
       <ul>
         <li>Ver Mais</li>
         <li onclick="location.href = 'loginPag.php'">Login</li>
-        <li onclick = "location.href = 'cadastroPag.php'">Cadastrar</li>
+        <li onclick="location.href = 'cadastroPag.php'">Cadastrar</li>
         <li>Configurações</li>
         <li onclick="location.href = '../php/logout.php'">Sair</li>
       </ul>
@@ -341,19 +400,32 @@
 
     <section class="mainSection">
 
+      <div class="containerOla">
+        <div class="mensagemOla">
+          <h1 class="titleOla">Olá, seja bem vindo!</h1>
+          <p class="fraseCadastro">Caso voce nao tenha uma conta, clique no botao abaixo e faca já seu cadastro!</p>
+
+          <button class="btnIrCadastro" onclick="location.href = 'cadastroPag.php' ">Ir para o cadastro</button>
+        </div>
+      </div>
+
       <div class="loginContainer">
         <form action="../php/configLogin.php" class="loginForm" method="post">
+          <h1 class="titleForm">Entre com sua conta.</h1>
 
           <input type="email" name="emailUser" placeholder="Digite seu email: " id="inputEmail" required>
           <input type="password" name="senhaUser" placeholder="Digite sua senha: " id="inputSenha" required>
 
           <button type="submit">Entrar</button>
 
-          <div class="LIs">
+          <ul class="LIs">
             <li>Esqueceu sua senha?</li>
-            <li>Lembrar de mim</li>
-            <input type="checkbox" name="" id="">
-          </div>
+            <li>
+              <label for="input">Lembrar de mim</label>
+              <input type="checkbox" id="input">
+            </li>
+          </ul>
+
         </form>
       </div>
     </section>
@@ -361,7 +433,7 @@
   </div>
 
   <footer class="footer">
-    <ul style="margin-left:-1vw;">
+    <ul>
       <li><strong>Institucional</strong></li>
       <li><a href="#">Sobre nós</a></li>
       <li><a href="#">Trabalhe conosco</a></li>

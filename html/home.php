@@ -176,22 +176,17 @@ session_start(); ?>
     }
 
     .footer {
-      display: inline-flex;
-      height: auto;
-      min-height: 80px;
-      bottom: 0;
       width: 100%;
-      flex-shrink: 0;
+      display: flex;
+      flex-wrap: wrap;
       background-color: rgb(255, 240, 24);
-      justify-content: space-between;
+      justify-content: space-around;
       margin-top: 10vh;
-      align-content: space-around;
-
     }
 
     .footer ul {
       list-style: none;
-      display: inline-block;
+      display: block;
       align-content: space-between;
       margin-left: -5vw;
     }
@@ -249,12 +244,11 @@ session_start(); ?>
 
       </ul>
       <?php
-        if (isset($_SESSION["email"]) && isset($_SESSION["nome"])) {
-          echo "<p>Ola " . $_SESSION["nome"] . "!</p>";
-        }
-        else{
-          session_destroy();
-        } 
+      if (isset($_SESSION["email"]) && isset($_SESSION["nome"])) {
+        echo "<p>Ola " . $_SESSION["nome"] . "!</p>";
+      } else {
+        session_destroy();
+      }
       ?>
       <div class="btnMenu" onclick="showMenu()">&#9776;
 
@@ -296,7 +290,7 @@ session_start(); ?>
   </div>
 
   <footer class="footer">
-    <ul style="margin-left:-1vw;">
+    <ul>
       <li><strong>Institucional</strong></li>
       <li><a href="#">Sobre nós</a></li>
       <li><a href="#">Trabalhe conosco</a></li>
@@ -324,7 +318,7 @@ session_start(); ?>
       <li><a href="#">YouTube</a></li>
     </ul>
 
-    <ul class='lastUL'>
+    <ul>
       <li><strong>Formas de Pagamento</strong></li>
       <li>Pix</li>
       <li>Cartão de Crédito</li>

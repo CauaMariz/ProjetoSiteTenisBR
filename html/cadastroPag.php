@@ -57,6 +57,7 @@
       padding: 5px;
       color: rgb(255, 240, 24);
     }
+
     .cabecalho li {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       margin-left: 5vh;
@@ -75,6 +76,7 @@
       padding: 5px;
       color: rgb(255, 240, 24);
     }
+
     .menu li {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       margin-left: 5vh;
@@ -93,6 +95,7 @@
       padding: 5px;
       color: rgb(255, 240, 24);
     }
+
     .bloco {
       position: relative;
       float: right;
@@ -203,19 +206,17 @@
     }
 
     .footer {
-      display: inline-flex;
-      height: auto;
-      min-height: 80px;
-      bottom: 0;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
       background-color: rgb(255, 240, 24);
-      justify-content: space-between;
+      justify-content: space-around;
       margin-top: 10vh;
-      align-content: space-around;
     }
 
     .footer ul {
       list-style: none;
-      display: inline-block;
+      display: block;
       align-content: space-between;
       margin-left: -5vw;
     }
@@ -257,11 +258,12 @@
     .cadastroForm {
       margin-top: 10vh;
       justify-content: space-between;
-    
+
     }
 
     .cadastroForm #inputEmail,
-    #inputSenha, #inputNome {
+    #inputSenha,
+    #inputNome {
       display: block;
       margin: 0 auto;
       background-color: whitesmoke;
@@ -296,17 +298,20 @@
     }
 
     .cadastroForm li {
-      
+
       display: inline;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    .cadastroForm .LIs{
+
+    .cadastroForm .LIs {
       margin-top: 5vh;
     }
-    .title{
+
+    .title {
       cursor: pointer;
     }
-    .titleForm{
+
+    .titleForm {
       display: flex;
       margin: 0;
       justify-self: center;
@@ -352,7 +357,7 @@
       <div class="cadastroContainer">
         <form action="../php/cadastroUser.php" class="cadastroForm" method="post">
           <h1 class="titleForm">Tenis BR</h1>
-          <input type="text" name = "nameUser" placeholder = "Digite seu nome de usuário: " id = "inputNome" required>
+          <input type="text" name="nameUser" placeholder="Digite seu nome de usuário: " id="inputNome" required>
           <input type="email" name="emailUser" placeholder="Digite seu email: " id="inputEmail" required>
           <input type="password" name="senhaUser" placeholder="Digite sua senha: " id="inputSenha" required>
 
@@ -372,7 +377,7 @@
   </div>
 
   <footer class="footer">
-    <ul style="margin-left:-1vw;">
+    <ul>
       <li><strong>Institucional</strong></li>
       <li><a href="#">Sobre nós</a></li>
       <li><a href="#">Trabalhe conosco</a></li>
@@ -411,4 +416,4 @@
   <script src="../scripts/scriptHome.js"></script>
 </body>
 
-</html> 
+</html>
