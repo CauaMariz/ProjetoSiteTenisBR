@@ -246,48 +246,42 @@
       min-width: 400px;
       min-height: 400px;
       height: 100%;
-      margin: 0 auto;
-      background-color: rgb(255, 240, 24);
+      padding: 3vw 4vw 2vw 4vw;
+      box-shadow: 5px 5px 10px 0px gray;
       justify-content: center;
       align-items: start;
-
-      border-radius: 20px;
-      box-shadow: 1px 1px 16px 1px gray;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
     }
 
     .cadastroForm {
-      margin-top: 10vh;
       justify-content: space-between;
-
     }
 
     .cadastroForm #inputEmail,
     #inputSenha,
     #inputNome {
       display: block;
-      margin: 0 auto;
-      background-color: whitesmoke;
-      justify-self: center;
-
-      padding: 12px;
-      width: 220px;
-      border: 1px solid gray;
-      border-radius: 4px;
+      justify-self: start;
+      padding: 12px 12px 12px 0;
+      width: 240px;
+      border: none;
       margin-bottom: 2vh;
+      border-bottom: 1px solid grey;
     }
 
     .cadastroForm button {
       background-color: whitesmoke;
       padding: 10px;
-      width: 245px;
+      width: 266px;
       border: 1px solid gray;
-      border-radius: 4px;
+      border-radius: 16px;
       cursor: pointer;
       font-weight: 600;
       color: black;
       transition: .5s;
       display: block;
-      margin: 0 auto;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
 
     .cadastroForm button:hover {
@@ -298,13 +292,17 @@
     }
 
     .cadastroForm li {
-
-      display: inline;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+      padding: 0;
+      margin-top: 5vh;
+      gap: 70px;
     }
 
     .cadastroForm .LIs {
       margin-top: 5vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     .title {
@@ -317,7 +315,62 @@
       justify-self: center;
       font-size: 5vh;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin-top: -5vh;
+      margin-bottom: 5vh;
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    .containerOla {
+      display: flex;
+      width: 350px;
+      word-wrap: normal;
+      min-width: 200px;
+      min-height: 400px;
+      height: 100%;
+      padding: 3vw 4vw 2vw 4vw;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      box-shadow: -5px 5px 10px 0px gray;
+      justify-content: center;
+      align-items: start;
+      background: linear-gradient(320deg, rgb(12, 92, 12), rgb(255, 240, 24));
+      background-size: 200% 200%;
+      background-position: left;
+      transition: background-position 0.5s;
+    }
+
+    .containerOla:hover {
+        background-position: right;
+    }
+
+    .fraseCadastro {
+      max-width: 260px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 18px;
+    }
+
+    .titleOla {
+      max-width: 350px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-size: 5vh;
+      margin-top: -.2vh;
+    }
+
+    .btnIrCadastro {
+      padding: 5px;
+      border-radius: 10px;
+      border: none;
+      box-shadow: 1px 1px 6px grey;
+      transition: .5s;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      cursor: pointer;
+    }
+
+    .btnIrCadastro:hover {
+      transition: .5s;
+      background-color: rgb(26, 152, 255);
     }
   </style>
 </head>
@@ -354,9 +407,18 @@
 
     <section class="mainSection">
 
+      <div class="containerOla">
+        <div class="mensagemOla">
+          <h1 class="titleOla">Olá, é sua primeira vez aqui?</h1>
+          <p class="fraseCadastro">Caso queira entrar com sua conta, clique no botao abaixo!</p>
+
+          <button class="btnIrCadastro" onclick="location.href = 'loginPag.php' ">Ir para o login</button>
+        </div>
+      </div>
+
       <div class="cadastroContainer">
         <form action="../php/cadastroUser.php" class="cadastroForm" method="post">
-          <h1 class="titleForm">Tenis BR</h1>
+          <h1 class="titleForm">Crie sua conta</h1>
           <input type="text" name="nameUser" placeholder="Digite seu nome de usuário: " id="inputNome" required>
           <input type="email" name="emailUser" placeholder="Digite seu email: " id="inputEmail" required>
           <input type="password" name="senhaUser" placeholder="Digite sua senha: " id="inputSenha" required>

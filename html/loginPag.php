@@ -284,7 +284,7 @@
       color: black;
       transition: .5s;
       display: block;
-
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
 
     .loginForm button:hover {
@@ -324,8 +324,7 @@
     input:focus {
       outline: none;
     }
-
-    .containerOla {
+  .containerOla {
       display: flex;
       width: 350px;
       word-wrap: normal;
@@ -338,6 +337,14 @@
       box-shadow: -5px 5px 10px 0px gray;
       justify-content: center;
       align-items: start;
+      background: linear-gradient(320deg, rgb(12, 92, 12), rgb(255, 240, 24));
+      background-size: 200% 200%;
+      background-position: left;
+      transition: background-position 0.5s;
+    }
+
+    .containerOla:hover {
+        background-position: right;
     }
 
     .fraseCadastro {
