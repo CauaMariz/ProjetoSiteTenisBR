@@ -299,7 +299,7 @@ session_start(); ?>
           <img src="../assets/Sapatos para sua reunião de amanha A TenisBR também tem! (1).jpg" alt="Imagem 1" />
         </div>
         <div class="swiper-slide">
-          <img src="../assets/imgTenisMain2.jpg" alt="Imagem 2" />
+          <img src="../assets/ImagemBanner2! (1).jpg" alt="Imagem 2" />
         </div>
         <div class="swiper-slide">
           <img src="../assets/imgTenisMain3.jpg" alt="Imagem 3" />
