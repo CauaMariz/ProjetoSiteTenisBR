@@ -1,3 +1,5 @@
+<?php
+session_start(); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -209,7 +211,7 @@
       width: 100%;
       display: flex;
       flex-wrap: wrap;
-      background-color: rgb(255, 240, 24);
+      background-color: rgba(221, 221, 221, 1);
       justify-content: space-around;
       margin-top: 10vh;
     }
@@ -235,57 +237,55 @@
     .mainSection {
       display: flex;
       width: 100%;
-
       align-items: center;
       justify-content: center;
     }
 
-    .loginContainer {
-      display: flex;
+    .changeForm {
+      display: block;
       width: fit-content;
       min-width: 400px;
       min-height: 400px;
       height: 100%;
-      margin: 0 auto;
-      background-color: rgb(255, 240, 24);
+      padding: 3vw 4vw 2vw 4vw;
+      box-shadow: 5px 5px 10px 0px gray;
       justify-content: center;
       align-items: start;
-
-      border-radius: 20px;
-      box-shadow: 1px 1px 16px 1px gray;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
     }
 
     .changeForm {
-      margin-top: 10vh;
       justify-content: space-between;
-
     }
 
     .changeForm #inputEmail {
       display: block;
-      margin: 0 auto;
-      background-color: whitesmoke;
-      justify-self: center;
-
-      padding: 12px;
-      width: 220px;
-      border: 1px solid gray;
-      border-radius: 4px;
+      justify-self: start;
+      padding: 12px 12px 12px 0;
+      width: 240px;
+      border: none;
       margin-bottom: 2vh;
+      border-bottom: 1px solid grey;
+    }
+
+    .changeForm input::placeholder {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: left;
     }
 
     .changeForm button {
       background-color: whitesmoke;
       padding: 10px;
-      width: 245px;
+      width: 266px;
       border: 1px solid gray;
-      border-radius: 4px;
+      border-radius: 16px;
       cursor: pointer;
       font-weight: 600;
       color: black;
       transition: .5s;
       display: block;
-      margin: 0 auto;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
 
     .changeForm button:hover {
@@ -295,10 +295,95 @@
       scale: 1.033;
     }
 
-    .changeForm li {
+    .changeForm .LIs {
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+      padding: 0;
+      margin-top: 5vh;
+      gap: 70px;
+    }
 
-      display: inline;
+    .changeForm .LIs li {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+
+    .title {
+      cursor: pointer;
+    }
+
+    .titleForm {
+      display: flex;
+      margin: 0;
+      justify-self: start;
+      font-size: 5vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin-bottom: 2vh;
+    }
+
+    .fraseMudarEmail {
+      display: flex;
+      margin: 0;
+      justify-self: start;
+      font-size: 2vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin-bottom: 5vh;
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    .containerOla {
+      display: flex;
+      width: 350px;
+      word-wrap: normal;
+      min-width: 200px;
+      min-height: 400px;
+      height: 100%;
+      padding: 3vw 4vw 2vw 4vw;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      box-shadow: -5px 5px 10px 0px gray;
+      justify-content: center;
+      align-items: start;
+      background: linear-gradient(320deg, rgb(12, 92, 12), rgb(255, 240, 24));
+      background-size: 200% 200%;
+      background-position: left;
+      transition: background-position 0.5s;
+    }
+
+    .containerOla:hover {
+      background-position: right;
+    }
+
+    .fraseCadastro {
+      max-width: 260px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 18px;
+    }
+
+    .titleOla {
+      max-width: 350px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-size: 5vh;
+      margin-top: -.2vh;
+    }
+
+    .btnIrCadastro {
+      padding: 5px;
+      border-radius: 10px;
+      border: none;
+      box-shadow: 1px 1px 6px grey;
+      transition: .5s;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      cursor: pointer;
+    }
+
+    .btnIrCadastro:hover {
+      transition: .5s;
+      padding: 10px;
     }
 
     .title {
@@ -342,6 +427,14 @@
       <div class="loginContainer">
         <form action="../php/changeUser.php" class="changeForm" method="post">
 
+          <?php
+          if (isset($_SESSION["email"]) && isset($_SESSION["nome"])) {
+            echo "<h1 class = 'titleForm'>Olá " . $_SESSION["nome"] . "!</h1>";
+          } else {
+            session_destroy();
+          }
+          ?>
+          <p class="fraseMudarEmail">Deseja mudar seu email?</p>
           <input type="email" name="emailUserDefault" placeholder="Digite seu email atual: " id="inputEmail" required>
           <input type="email" name="emailUserNew" placeholder="Digite seu novo email: " id="inputEmail" required>
           <button type="submit">Alterar</button>

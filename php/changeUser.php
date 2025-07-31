@@ -18,13 +18,14 @@ function changeEmail($usuario){
 
 
 if($_SESSION["email"] && $_SESSION["nome"]){
-  //$nomeUser = $_POST["nameUser"];
+
   $emailUser = filter_var($_POST["emailUserDefault"] , FILTER_SANITIZE_EMAIL);
-  //$passUser = $_POST["passUser"];
+
 
   if($usuario->checkUser($emailUser) == 1){
     changeEmail($usuario);
     echo "<script>alert(\"Email alterado!\")</script>";
+    echo "<script>location.href = '../html/pagUser.php'</script>";
   }
   else{
        echo "<script>alert(\"Seu antigo email está incorreto!\")</script>";

@@ -179,7 +179,7 @@ session_start(); ?>
       width: 100%;
       display: flex;
       flex-wrap: wrap;
-      background-color: rgb(255, 240, 24);
+      background-color: rgba(221, 221, 221, 1);
       justify-content: space-around;
       margin-top: 10vh;
     }
@@ -226,6 +226,34 @@ session_start(); ?>
       width: 100%;
       height: 91vh;
     }
+
+    .containerFraseAproveite {
+      width: 100%;
+      height: fit-content;
+      display: flex;
+      margin: 0 auto;
+      justify-self: center;
+    }
+
+    .mainSection {
+      width: 100%;
+      height: auto;
+      display: flex;
+    }
+
+    .fraseAproveite {
+      display: flex;
+      margin: 0 auto;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 30px;
+    }
+
+    .fraseAproveite span {
+      color: rgb(12, 92, 12);
+      font-style: italic;
+      font-weight: 600;
+      padding-left: 8px;
+    }
   </style>
 </head>
 
@@ -268,7 +296,7 @@ session_start(); ?>
       <div class="swiper-wrapper">
         <!-- Slides com imagens -->
         <div class="swiper-slide">
-          <img src="../assets/imgTenisMain1.png" alt="Imagem 1" />
+          <img src="../assets/Sapatos para sua reunião de amanha A TenisBR também tem! (1).jpg" alt="Imagem 1" />
         </div>
         <div class="swiper-slide">
           <img src="../assets/imgTenisMain2.jpg" alt="Imagem 2" />
@@ -283,10 +311,16 @@ session_start(); ?>
     </div>
 
 
+
     <div class="bloco">
       <img src="../assets/ChatGPT Image 2 de abr. de 2025, 19_41_23.png" alt="" class="imgTenis">
     </div>
 
+    <div class="mainSection">
+      <div class="containerFraseAproveite">
+        <p class="fraseAproveite">Aproveite a semana da <span>CORRIDA 70% OFF!</span></p>
+      </div>
+    </div>
   </div>
 
   <footer class="footer">

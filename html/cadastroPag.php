@@ -206,10 +206,10 @@
     }
 
     .footer {
-      width: 100%;
+     width: 100%;
       display: flex;
       flex-wrap: wrap;
-      background-color: rgb(255, 240, 24);
+      background-color: rgba(221, 221, 221, 1);
       justify-content: space-around;
       margin-top: 10vh;
     }
@@ -370,7 +370,7 @@
 
     .btnIrCadastro:hover {
       transition: .5s;
-      background-color: rgb(26, 152, 255);
+      padding: 10px;
     }
   </style>
 </head>
