@@ -267,21 +267,16 @@ session_start(); ?>
         <li onclick="location.href = 'loginPag.php'">Login</li>
         <li onclick="location.href = 'cadastroPag.php'">Cadastrar</li>
         <li>Configurações</li>
-        <li>Sair</li>
-
-
-      </ul>
-      <?php
-      if (isset($_SESSION["email"]) && isset($_SESSION["nome"])) {
-        echo "<p>Ola " . $_SESSION["nome"] . "!</p>";
-      } else {
-        session_destroy();
-      }
-      ?>
-      <div class="btnMenu" onclick="showMenu()">&#9776;
-
-      </div>
-
+        <li onclick="location.href = '../php/logout.php'">Sair</li>
+        <?php
+        if (isset($_SESSION["email"]) && isset($_SESSION["nome"])) {
+          echo "<li class = \"buttonPagUser\" onclick = \"location.href = 'pagUser.php'\">Minha conta</li>";
+          echo "</ul><div class=\"btnMenu\" onclick=\"showMenu()\">&#9776;</div>";
+        } else {
+          session_destroy();
+        }
+        ?>
+      
     </header>
 
     <div class="menu">
