@@ -19,6 +19,7 @@ session_start(); ?>
       flex-direction: column;
       height: 100%;
       display: flex;
+      background-color: whitesmoke;
     }
 
     .pag {
@@ -56,7 +57,8 @@ session_start(); ?>
       border-radius: 8px;
     }
 
-    li:hover {
+    .cabecalho li:hover,
+    .footer li:hover {
       transition: .5s;
       background-color: rgb(34, 34, 34);
       cursor: pointer;
@@ -238,7 +240,7 @@ session_start(); ?>
     .mainSection {
       width: 100%;
       height: auto;
-      display: flex;
+      display: block;
     }
 
     .fraseAproveite {
@@ -253,6 +255,68 @@ session_start(); ?>
       font-style: italic;
       font-weight: 600;
       padding-left: 8px;
+    }
+
+    .barraOpcoes {
+      display: inline;
+      width: 100%;
+      list-style: none;
+      background-color: rgba(221, 221, 221, 1);
+    }
+
+    .ulOpcoes {
+      display: flex;
+      width: fit-content;
+      list-style: none;
+      transition: .4s;
+      padding: 20px 30px 20px 30px;
+      justify-content: center;
+      margin-left: 4.5vw;
+      border: 1px solid black;
+    }
+
+    .ulOpcoes li {
+      white-space: nowrap;
+      border-right: 1px solid black;
+      margin-right: 2%;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      padding-right: 5px;
+      cursor: pointer;
+    }
+
+    .ulOpcoes li:hover {
+      color: rgb(12, 92, 12);
+      font-weight: 600;
+    }
+
+    .produtos {
+      width: auto;
+      border: 1px solid black;
+      height: fit-content;
+      display: flex;
+      overflow: hidden;
+    }
+
+    .section1 {
+      max-width: 100vh;
+    }
+
+    .swiperScroll {
+      display: flex;
+      width: 100vw;
+      height: 300px;
+    }
+
+    .swiper-scrollbar {
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    .swiper-wrapper {
+      width: 100%;
+    }
+
+    .swiper-slide_ {
+      width: 200px;
     }
   </style>
 </head>
@@ -276,7 +340,7 @@ session_start(); ?>
           session_destroy();
         }
         ?>
-      
+
     </header>
 
     <div class="menu">
@@ -315,6 +379,41 @@ session_start(); ?>
       <div class="containerFraseAproveite">
         <p class="fraseAproveite">Aproveite a semana da <span>CORRIDA 70% OFF!</span></p>
       </div>
+
+      <div class="barraOpcoes">
+        <ul class="ulOpcoes">
+          <li>Esporte</li>
+          <li>Dia a Dia</li>
+          <li>Infantil</li>
+          <li>Street Wear</li>
+          <li>Formal</li>
+        </ul>
+      </div>
+
+      <nav class="produtos">
+        <div class="section1">
+          <!-- Container principal do Swiper -->
+          <div class="swiper swiperScroll">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide swiper-slide_">Slide 1</div>
+              <div class="swiper-slide swiper-slide_">Slide 1</div>
+              <div class="swiper-slide swiper-slide_">Slide 1</div>
+              <div class="swiper-slide swiper-slide_">Slide 1</div>
+              <div class="swiper-slide swiper-slide_">Slide 1</div>
+              <div class="swiper-slide swiper-slide_">Slide 1</div>
+              <div class="swiper-slide swiper-slide_">Slide 1</div>
+              <div class="swiper-slide swiper-slide_">Slide 1</div>
+            </div>
+            <!-- Adicione este elemento -->
+            <div class="swiper-scrollbar"></div>
+          </div>
+
+        </div>
+        <div class="section2"></div>
+        <div class="section3"></div>
+        <div class="section4"></div>
+        <div class="section5"></div>
+      </nav>
     </div>
   </div>
 
@@ -359,13 +458,20 @@ session_start(); ?>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 
   <script>
-    const swiper = new Swiper('.mySwiper', {
-      // Outras configurações do Swiper
+    // Swiper do Banner
+    const swiperBanner = new Swiper('.mySwiper', {
       loop: true,
-
       pagination: {
-        el: '.swiper-pagination', // Seleciona o elemento
-        clickable: true, // Permite clicar nos bullets
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+
+    // Swiper com Scrollbar
+    const swiperScroll = new Swiper('.swiperScroll', {
+      scrollbar: {
+        el: '.swiper-scrollbar',
+        draggable: true,
       },
     });
   </script>
