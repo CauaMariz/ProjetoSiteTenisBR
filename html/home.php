@@ -291,32 +291,49 @@ session_start(); ?>
 
     .produtos {
       width: auto;
-      border: 1px solid black;
       height: fit-content;
-      display: flex;
+      display: flexbox;
       overflow: hidden;
+      margin-left: 4.5vw;
     }
 
     .section1 {
-      max-width: 100vh;
+      max-width: 80vh;
+      display: inline-block;
     }
 
-    .swiperScroll {
+    .fotosSection1 {
       display: flex;
-      width: 100vw;
-      height: 300px;
     }
 
-    .swiper-scrollbar {
-      background: rgba(0, 0, 0, 0.1);
-    }
-
-    .swiper-wrapper {
-      width: 100%;
+    .swiper-slide_ img {
+      width: 250px;
+      height: 350px;
+      padding-left: 30px;
     }
 
     .swiper-slide_ {
-      width: 200px;
+      display: flexbox;
+      width: 300px;
+      height: 470px;
+      padding-top: 50px;
+      background-color: rgba(233, 233, 233, 1);
+      justify-content: center;
+    }
+
+    .informacoesProduto {
+      list-style: none;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .informacaoPreco {
+      font-weight: 600;
+    }
+
+    .informacoesProduto span {
+      font-weight: 600;
+      color: rgb(12, 92, 12);
+      cursor: pointer;
     }
   </style>
 </head>
@@ -392,29 +409,78 @@ session_start(); ?>
 
       <nav class="produtos">
         <div class="section1">
-          <!-- Container principal do Swiper -->
-          <div class="swiper swiperScroll">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide swiper-slide_">Slide 1</div>
-              <div class="swiper-slide swiper-slide_">Slide 1</div>
-              <div class="swiper-slide swiper-slide_">Slide 1</div>
-              <div class="swiper-slide swiper-slide_">Slide 1</div>
-              <div class="swiper-slide swiper-slide_">Slide 1</div>
-              <div class="swiper-slide swiper-slide_">Slide 1</div>
-              <div class="swiper-slide swiper-slide_">Slide 1</div>
-              <div class="swiper-slide swiper-slide_">Slide 1</div>
-            </div>
-            <!-- Adicione este elemento -->
-            <div class="swiper-scrollbar"></div>
-          </div>
 
+          <div class="fotosSection1">
+            <div class="swiper-slide swiper-slide_">
+              <img src="../assets/imagemSapato1.jpg" alt="">
+              <ul class="informacoesProduto">
+                <li class="informacaoPreco">R$ 350,99</li>
+                <li class="informacao">Tenis Nike Air Force</li>
+                <li class="informacao">Unisex <span>Street Wear</span></li>
+                <li class="informacao">Disponível no estoque: <span>35</span></li>
+              </ul>
+
+            </div>
+            <div class="swiper-slide swiper-slide_">
+              <img src="../assets/imagemSapato1.jpg" alt="">
+              <ul class="informacoesProduto">
+                <li class="informacaoPreco">R$ 350,99</li>
+                <li class="informacao">Tenis Nike Air Force</li>
+                <li class="informacao">Unisex <span>Street Wear</span></li>
+                <li class="informacao">Disponível no estoque: <span>35</span></li>
+              </ul>
+
+            </div>
+            <div class="swiper-slide swiper-slide_">
+              <img src="../assets/imagemSapato1.jpg" alt="">
+              <ul class="informacoesProduto">
+                <li class="informacaoPreco">R$ 350,99</li>
+                <li class="informacao">Tenis Nike Air Force</li>
+                <li class="informacao">Unisex <span>Street Wear</span></li>
+                <li class="informacao">Disponível no estoque: <span>35</span></li>
+              </ul>
+
+            </div>
+            <div class="swiper-slide swiper-slide_">
+              <img src="../assets/imagemSapato1.jpg" alt="">
+              <ul class="informacoesProduto">
+                <li class="informacaoPreco">R$ 350,99</li>
+                <li class="informacao">Tenis Nike Air Force</li>
+                <li class="informacao">Unisex <span>Street Wear</span></li>
+                <li class="informacao">Disponível no estoque: <span>35</span></li>
+              </ul>
+
+            </div>
+             <div class="swiper-slide swiper-slide_">
+              <img src="../assets/imagemSapato1.jpg" alt="">
+              <ul class="informacoesProduto">
+                <li class="informacaoPreco">R$ 350,99</li>
+                <li class="informacao">Tenis Nike Air Force</li>
+                <li class="informacao">Unisex <span>Street Wear</span></li>
+                <li class="informacao">Disponível no estoque: <span>35</span></li>
+              </ul>
+            
+            </div>
+             <div class="swiper-slide swiper-slide_">
+              <img src="../assets/imagemSapato1.jpg" alt="">
+              <ul class="informacoesProduto">
+                <li class="informacaoPreco">R$ 350,99</li>
+                <li class="informacao">Tenis Nike Air Force</li>
+                <li class="informacao">Unisex <span>Street Wear</span></li>
+                <li class="informacao">Disponível no estoque: <span>35</span></li>
+              </ul>
+            
+            </div>
+          </div>
         </div>
-        <div class="section2"></div>
-        <div class="section3"></div>
-        <div class="section4"></div>
-        <div class="section5"></div>
-      </nav>
+
     </div>
+    <div class="section2"></div>
+    <div class="section3"></div>
+    <div class="section4"></div>
+    <div class="section5"></div>
+    </nav>
+  </div>
   </div>
 
   <footer class="footer">
@@ -464,14 +530,6 @@ session_start(); ?>
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
-      },
-    });
-
-    // Swiper com Scrollbar
-    const swiperScroll = new Swiper('.swiperScroll', {
-      scrollbar: {
-        el: '.swiper-scrollbar',
-        draggable: true,
       },
     });
   </script>
