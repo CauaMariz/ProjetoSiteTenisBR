@@ -303,22 +303,48 @@ session_start(); ?>
     }
 
     .fotosSection1 {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      /* 4 colunas no PC */
+      gap: 20px;
+      justify-items: center;
     }
+
+    .swiper-slide_ {
+      width: 100%;
+      max-width: 250px;
+      height: auto;
+    }
+
+    /* Tablet grande */
+    @media (max-width: 1024px) {
+      .fotosSection1 {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 colunas */
+      }
+    }
+
+    /* Tablet pequeno / celular grande */
+    @media (max-width: 768px) {
+      .fotosSection1 {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 colunas */
+      }
+    }
+
+    /* Celular pequeno */
+    @media (max-width: 480px) {
+      .fotosSection1 {
+        grid-template-columns: repeat(1, 1fr);
+        /* 1 coluna */
+      }
+    }
+
 
     .swiper-slide_ img {
       width: 250px;
       height: 350px;
       padding-left: 30px;
-    }
-
-    .swiper-slide_ {
-      display: flexbox;
-      width: 300px;
-      height: 470px;
-      padding-top: 50px;
-      background-color: rgba(233, 233, 233, 1);
-      justify-content: center;
     }
 
     .informacoesProduto {
@@ -422,54 +448,54 @@ session_start(); ?>
 
             </div>
             <div class="swiper-slide swiper-slide_">
-              <img src="../assets/imagemSapato1.jpg" alt="">
+              <img src="../assets/imagemSapato2.jpg" alt="">
               <ul class="informacoesProduto">
-                <li class="informacaoPreco">R$ 350,99</li>
-                <li class="informacao">Tenis Nike Air Force</li>
-                <li class="informacao">Unisex <span>Street Wear</span></li>
-                <li class="informacao">Disponível no estoque: <span>35</span></li>
+                <li class="informacaoPreco">R$ 250,90</li>
+                <li class="informacao">Puma Suede Classic</li>
+                <li class="informacao">Unisex <span>Dia a Dia</span></li>
+                <li class="informacao">Disponível no estoque: <span>67</span></li>
               </ul>
 
             </div>
             <div class="swiper-slide swiper-slide_">
-              <img src="../assets/imagemSapato1.jpg" alt="">
+              <img src="../assets/imagemSapato3.jpg" alt="">
               <ul class="informacoesProduto">
-                <li class="informacaoPreco">R$ 350,99</li>
-                <li class="informacao">Tenis Nike Air Force</li>
+                <li class="informacaoPreco">R$ 499,99</li>
+                <li class="informacao">Tenis Nike Air Force Old</li>
                 <li class="informacao">Unisex <span>Street Wear</span></li>
-                <li class="informacao">Disponível no estoque: <span>35</span></li>
+                <li class="informacao">Disponível no estoque: <span>15</span></li>
               </ul>
 
             </div>
             <div class="swiper-slide swiper-slide_">
-              <img src="../assets/imagemSapato1.jpg" alt="">
+              <img src="../assets/imagemSapato4.jpg" alt="">
               <ul class="informacoesProduto">
-                <li class="informacaoPreco">R$ 350,99</li>
-                <li class="informacao">Tenis Nike Air Force</li>
-                <li class="informacao">Unisex <span>Street Wear</span></li>
-                <li class="informacao">Disponível no estoque: <span>35</span></li>
+                <li class="informacaoPreco">R$ 199,90</li>
+                <li class="informacao">Tenis casual Feminino</li>
+                <li class="informacao">Feminino <span>Dia a Dia</span></li>
+                <li class="informacao">Disponível no estoque: <span>98</span></li>
               </ul>
 
             </div>
-             <div class="swiper-slide swiper-slide_">
-              <img src="../assets/imagemSapato1.jpg" alt="">
+            <div class="swiper-slide swiper-slide_">
+              <img src="../assets/imagemSapato5.jpg" alt="">
               <ul class="informacoesProduto">
-                <li class="informacaoPreco">R$ 350,99</li>
-                <li class="informacao">Tenis Nike Air Force</li>
-                <li class="informacao">Unisex <span>Street Wear</span></li>
-                <li class="informacao">Disponível no estoque: <span>35</span></li>
+                <li class="informacaoPreco">R$ 399,90</li>
+                <li class="informacao">Chuck Taylor All Star</li>
+                <li class="informacao">Unisex <span>Dia a Dia</span></li>
+                <li class="informacao">Disponível no estoque: <span>75</span></li>
               </ul>
-            
+
             </div>
-             <div class="swiper-slide swiper-slide_">
-              <img src="../assets/imagemSapato1.jpg" alt="">
+            <div class="swiper-slide swiper-slide_">
+              <img src="../assets/imagemSapato7.jpg" alt="">
               <ul class="informacoesProduto">
-                <li class="informacaoPreco">R$ 350,99</li>
-                <li class="informacao">Tenis Nike Air Force</li>
-                <li class="informacao">Unisex <span>Street Wear</span></li>
-                <li class="informacao">Disponível no estoque: <span>35</span></li>
+                <li class="informacaoPreco">R$ 279,90</li>
+                <li class="informacao">Sapato social masculino FormalMan</li>
+                <li class="informacao">Masculino <span>Formal</span></li>
+                <li class="informacao">Disponível no estoque: <span>57</span></li>
               </ul>
-            
+
             </div>
           </div>
         </div>
