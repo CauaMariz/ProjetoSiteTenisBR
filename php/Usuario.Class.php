@@ -15,8 +15,19 @@ class Usuario
     try {
       $this->pdo = new PDO($cnct, $this->user, $this->pass);
       return true;
-    } catch (\Throwable) {
-      return false;
+    } catch (PDOException $e) {
+      $errorCode = $e->getCode();
+
+      if($errorCode == 1049){
+        echo "<script>alert('Erro: Banco de dados não encontrado!')</script>";
+      }
+      else if($errorCode == 2002){
+         echo "<script>alert('Erro: Não foi possível conectar ao servidor MySQL!')</script>";
+      }
+      else{
+        echo "<script>alert('Erro de conexão: " . addslashes($e->getMessage()) . "')</script>";
+      }
+      exit;
     }
   }
 

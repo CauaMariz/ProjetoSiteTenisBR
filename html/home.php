@@ -304,7 +304,7 @@ session_start(); ?>
 
     .fotosSection1 {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       /* 4 colunas no PC */
       gap: 20px;
       justify-items: center;
@@ -495,7 +495,61 @@ session_start(); ?>
                 <li class="informacao">Masculino <span>Formal</span></li>
                 <li class="informacao">Disponível no estoque: <span>57</span></li>
               </ul>
+            </div>
+            <div class="swiper-slide swiper-slide_">
+              <img src="../assets/imagemSapato8.jpg" alt="">
+              <ul class="informacoesProduto">
+                <li class="informacaoPreco">R$ 199,99</li>
+                <li class="informacao">Tenis Fila Unisex</li>
+                <li class="informacao">Unisex <span>Dia a Dia</span></li>
+                <li class="informacao">Disponível no estoque: <span>120</span></li>
+              </ul>
+            </div>
 
+            <div class="swiper-slide swiper-slide_">
+              <img src="../assets/imagemSapato9.jpg" alt="">
+              <ul class="informacoesProduto">
+                <li class="informacaoPreco">R$ 379,90</li>
+                <li class="informacao">Sapato Vans masculino</li>
+                <li class="informacao">Masculino <span>Street Wear</span></li>
+                <li class="informacao">Disponível no estoque: <span>17</span></li>
+              </ul>
+            </div>
+            <div class="swiper-slide swiper-slide_">
+              <img src="../assets/imagemSapato10.jpg" alt="">
+              <ul class="informacoesProduto">
+                <li class="informacaoPreco">R$ 279,90</li>
+                <li class="informacao">Sapato Vans SkateBoard masculino</li>
+                <li class="informacao">Masculino <span>Street Wear</span></li>
+                <li class="informacao">Disponível no estoque: <span>12</span></li>
+              </ul>
+            </div>
+            <div class="swiper-slide swiper-slide_">
+              <img src="../assets/imagemSapato11.jpg" alt="">
+              <ul class="informacoesProduto">
+                <li class="informacaoPreco">R$ 479,90</li>
+                <li class="informacao">Tenis de Corrida Neon</li>
+                <li class="informacao">Masculino <span>Esporte</span></li>
+                <li class="informacao">Disponível no estoque: <span>65</span></li>
+              </ul>
+            </div> 
+            <div class="swiper-slide swiper-slide_">
+              <img src="../assets/imagemSapato12.jpg" alt="">
+              <ul class="informacoesProduto">
+                <li class="informacaoPreco">R$ 699,90</li>
+                <li class="informacao">Tenis Nike Dunk Green</li>
+                <li class="informacao">Unisex <span>Street Wear</span></li>
+                <li class="informacao">Disponível no estoque: <span>7</span></li>
+              </ul>
+            </div>
+            <div class="swiper-slide swiper-slide_">
+              <img src="../assets/imagemSapato13.jpg" alt="">
+              <ul class="informacoesProduto">
+                <li class="informacaoPreco">R$ 129,90</li>
+                <li class="informacao">Sandália Feminina Womens</li>
+                <li class="informacao">Feminino <span>Dia a Dia</span></li>
+                <li class="informacao">Disponível no estoque: <span>94</span></li>
+              </ul>
             </div>
           </div>
         </div>
