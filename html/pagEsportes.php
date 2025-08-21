@@ -118,6 +118,24 @@ session_start(); ?>
       }
     }
 
+    @media (max-width: 1000px) {
+      .imgTenis {
+        width: 130px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .imgTenis {
+        width: 130px;
+      }
+    }
+
+    @media (max-width: 690px) {
+      .imgTenis {
+        width: 100px;
+      }
+    }
+
     @media (max-width: 490px) {
       .imgTenis {
         width: 100px;
@@ -271,7 +289,7 @@ session_start(); ?>
       transition: .4s;
       padding: 20px 30px 20px 30px;
       justify-content: center;
-      margin-left: 4.5vw;
+      margin-left: 6vw;
       border: 1px solid black;
     }
 
@@ -295,6 +313,7 @@ session_start(); ?>
       display: flexbox;
       overflow: hidden;
       margin-left: 4.5vw;
+      margin-top: 5vw;
     }
 
     .section1 {
@@ -361,6 +380,37 @@ session_start(); ?>
       color: rgb(12, 92, 12);
       cursor: pointer;
     }
+
+    .containerSuaCaminhada {
+      width: 100%;
+      height: fit-content;
+      justify-content: center;
+    }
+
+    .fraseSuaCaminhada {
+      display: flex;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-size: 35px;
+      font-weight: 700;
+      font-style: italic;
+      color: rgb(12, 92, 12);
+      margin: 0 auto;
+      justify-self: center;
+      padding-left: 10vw;
+      text-align: center;
+    }
+
+    @media (max-width: 1000px) {
+      .fraseSuaCaminhada {
+        font-size: 30px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .fraseSuaCaminhada {
+        font-size: 25px;
+      }
+    }
   </style>
 </head>
 
@@ -394,43 +444,30 @@ session_start(); ?>
       <li>Sair</li>
     </div>
 
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <!-- Slides com imagens -->
-        <div class="swiper-slide">
-          <img src="../assets/Sapatos para sua reunião de amanha A TenisBR também tem! (1).jpg" alt="Imagem 1" />
-        </div>
-        <div class="swiper-slide">
-          <img src="../assets/ImagemBanner2! (1).jpg" alt="Imagem 2" />
-        </div>
-        <div class="swiper-slide">
-          <img src="../assets/imgTenisMain3.jpg" alt="Imagem 3" />
-        </div>
-      </div>
-
-      <!-- Paginação automática -->
-      <div class="swiper-pagination"></div>
-    </div>
-
-
 
     <div class="bloco">
       <img src="../assets/ChatGPT Image 2 de abr. de 2025, 19_41_23.png" alt="" class="imgTenis">
     </div>
 
     <div class="mainSection">
-      <div class="containerFraseAproveite">
-        <p class="fraseAproveite">Aproveite a semana da <span>CORRIDA 70% OFF!</span></p>
-      </div>
+
+
 
       <div class="barraOpcoes">
+
+
+
         <ul class="ulOpcoes">
-          <li onclick="location.href = '../html/pagEsportes.php'">Esporte</li>
+          <li>Esporte</li>
           <li>Dia a Dia</li>
           <li>Infantil</li>
           <li>Street Wear</li>
           <li>Formal</li>
         </ul>
+
+        <div class="containerSuaCaminhada">
+          <p class="fraseSuaCaminhada">A sua caminhada pede conforto</p>
+        </div>
       </div>
 
       <nav class="produtos">
@@ -532,7 +569,7 @@ session_start(); ?>
                 <li class="informacao">Masculino <span>Esporte</span></li>
                 <li class="informacao">Disponível no estoque: <span>65</span></li>
               </ul>
-            </div> 
+            </div>
             <div class="swiper-slide swiper-slide_">
               <img src="../assets/imagemSapato12.jpg" alt="">
               <ul class="informacoesProduto">
@@ -603,16 +640,7 @@ session_start(); ?>
   <script src="../scripts/scriptHome.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 
-  <script>
-    // Swiper do Banner
-    const swiperBanner = new Swiper('.mySwiper', {
-      loop: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-    });
-  </script>
+
 </body>
 
 </html>
