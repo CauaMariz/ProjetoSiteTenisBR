@@ -8,8 +8,7 @@ session_start(); ?>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
   <link rel="stylesheet" href="http://unpkg.com/swiper/swiper-bundle.min.css" />
-  <script src="http://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
+ 
   <style>
     html,
     body {
@@ -132,12 +131,14 @@ session_start(); ?>
     }
 
     @media (max-width: 650px) {
-      .cabecalho ul {
+      .cabecalho ul.menuPrincipal {
         display: none;
+        /* esconde a lista principal */
       }
 
       .btnMenu {
         display: flex;
+        /* mostra o botão */
       }
     }
 
@@ -163,6 +164,25 @@ session_start(); ?>
     .menu li {
       display: flex;
       margin-left: 2vw;
+    }
+
+    .menu li {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      margin-left: 5vh;
+      font-weight: 600;
+      transition: .5s;
+      font-size: 18px;
+      padding: 5px;
+      border-radius: 8px;
+    }
+
+    .menu li:hover {
+      transition: .5s;
+      background-color: rgb(34, 34, 34);
+      cursor: pointer;
+      border-radius: 8px;
+      padding: 5px;
+      color: rgb(255, 240, 24);
     }
 
     .showMenu {
@@ -378,12 +398,11 @@ session_start(); ?>
         <?php
         if (isset($_SESSION["email"]) && isset($_SESSION["nome"])) {
           echo "<li class = \"buttonPagUser\" onclick = \"location.href = 'pagUser.php'\">Minha conta</li>";
-          echo "</ul><div class=\"btnMenu\" onclick=\"showMenu()\">&#9776;</div>";
         } else {
           session_destroy();
         }
         ?>
-
+        <div class="btnMenu" onclick="showMenu()">&#9776;</div>
     </header>
 
     <div class="menu">
@@ -532,7 +551,7 @@ session_start(); ?>
                 <li class="informacao">Masculino <span>Esporte</span></li>
                 <li class="informacao">Disponível no estoque: <span>65</span></li>
               </ul>
-            </div> 
+            </div>
             <div class="swiper-slide swiper-slide_">
               <img src="../assets/imagemSapato12.jpg" alt="">
               <ul class="informacoesProduto">
@@ -600,9 +619,10 @@ session_start(); ?>
     </ul>
   </footer>
 
-  <script src="../scripts/scriptHome.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+   <script src="http://unpkg.com/swiper/swiper-bundle.min.js"></script>
+ <script src="../scripts/scriptHome.js"></script>
   <script>
     // Swiper do Banner
     const swiperBanner = new Swiper('.mySwiper', {
@@ -612,6 +632,7 @@ session_start(); ?>
         clickable: true,
       },
     });
+
   </script>
 </body>
 

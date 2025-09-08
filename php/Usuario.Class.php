@@ -33,7 +33,7 @@ class Usuario
 
   function checkUser($email)
   {
-    $sql = $this->pdo->prepare("SELECT * FROM userss WHERE email = :e");
+    $sql = $this->pdo->prepare("SELECT * FROM usersss WHERE email = :e");
     $sql->bindValue(":e", $email);
     $sql->execute();
     return $sql->rowCount();
@@ -41,7 +41,7 @@ class Usuario
 
   function checkPass($email, $senha)
   {
-    $sqlPass = $this->pdo->prepare("SELECT senha FROM userss WHERE email = :e");
+    $sqlPass = $this->pdo->prepare("SELECT senha FROM usersss WHERE email = :e");
     $sqlPass->bindValue(":e", $email);
     $sqlPass->execute();
     $row = $sqlPass->fetch(PDO::FETCH_ASSOC);
@@ -53,7 +53,7 @@ class Usuario
   }
   function insrtUser($name, $email, $pass)
   {
-    $sql = $this->pdo->prepare("INSERT INTO userss SET nome = :n , email = :e , senha = :s");
+    $sql = $this->pdo->prepare("INSERT INTO usersss SET nome = :n , email = :e , senha = :s");
     $sql->bindValue(":n", $name);
     $sql->bindValue(":e", $email);
     $sql->bindValue(":s", $pass);

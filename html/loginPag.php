@@ -388,9 +388,7 @@
         <li onclick="location.href = '../php/logout.php'">Sair</li>
       </ul>
 
-      <div class="btnMenu" onclick="showMenu()">&#9776;
-
-      </div>
+      <div class="btnMenu" onclick="showMenu()">&#9776;</div>
 
     </header>
     <div class="bloco">

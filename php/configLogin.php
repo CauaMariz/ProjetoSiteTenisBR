@@ -5,7 +5,7 @@ $Usuario = new Usuario();
 function nameUser($Usuario, $email)
 {
 
-  $sqlPass = $Usuario->pdo->prepare("SELECT nome FROM userss WHERE email = :e");
+  $sqlPass = $Usuario->pdo->prepare("SELECT nome FROM usersss WHERE email = :e");
   $sqlPass->bindValue(":e", $email);
   $sqlPass->execute();
   if ($sqlPass->rowCount() > 0) {

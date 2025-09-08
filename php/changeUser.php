@@ -6,7 +6,7 @@ function changeEmail($usuario){
     $emailUserDefault = filter_var($_POST["emailUserDefault"] , FILTER_SANITIZE_EMAIL);
     $emailUserNew = filter_var($_POST["emailUserNew"] , FILTER_SANITIZE_EMAIL);
      
-    $sql = "UPDATE userss SET email = :eN WHERE email = :eD";
+    $sql = "UPDATE usersss SET email = :eN WHERE email = :eD";
 
     $pdo = $usuario->pdo->prepare($sql);
 
