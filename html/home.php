@@ -8,7 +8,7 @@ session_start(); ?>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
   <link rel="stylesheet" href="http://unpkg.com/swiper/swiper-bundle.min.css" />
- 
+
   <style>
     html,
     body {
@@ -131,9 +131,8 @@ session_start(); ?>
     }
 
     @media (max-width: 650px) {
-      .cabecalho ul.menuPrincipal {
+      .cabecalho ul>li {
         display: none;
-        /* esconde a lista principal */
       }
 
       .btnMenu {
@@ -158,7 +157,7 @@ session_start(); ?>
       text-decoration: none;
       list-style: none;
       padding-bottom: 2vw;
-      z-index: 1;
+      z-index: 2;
     }
 
     .menu li {
@@ -402,7 +401,8 @@ session_start(); ?>
           session_destroy();
         }
         ?>
-        <div class="btnMenu" onclick="showMenu()">&#9776;</div>
+      </ul>
+      <div class="btnMenu" onclick="showMenu()">&#9776;</div>
     </header>
 
     <div class="menu">
@@ -410,7 +410,7 @@ session_start(); ?>
       <li onclick="location.href = 'loginPag.php'">Login</li>
       <li onclick="location.href = 'cadastroPag.php'">Cadastrar</li>
       <li>Configurações</li>
-      <li>Sair</li>
+      <li onclick = "location.href = '../php/logout.php'">Sair</li>
     </div>
 
     <div class="swiper mySwiper">
@@ -621,8 +621,8 @@ session_start(); ?>
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
-   <script src="http://unpkg.com/swiper/swiper-bundle.min.js"></script>
- <script src="../scripts/scriptHome.js"></script>
+  <script src="http://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
   <script>
     // Swiper do Banner
     const swiperBanner = new Swiper('.mySwiper', {
@@ -632,7 +632,19 @@ session_start(); ?>
         clickable: true,
       },
     });
+    let menu = document.querySelector(".menu");
+    let btnMenu = document.querySelector(".btnMenu");
 
+    function showMenu() {
+      if (menu.classList.contains("exclMenu")) {
+        menu.classList.add("showMenu")
+        menu.classList.remove("exclMenu")
+
+      } else {
+        menu.classList.add("exclMenu")
+        menu.classList.remove("showMenu")
+      }
+    }
   </script>
 </body>
 

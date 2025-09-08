@@ -1,8 +1,16 @@
 <?php
 session_start();
-unset($_SESSION['email']);
+
+if (!isset($_SESSION["email"]) || !isset($_SESSION["nome"])) {
+ echo "<script>alert('Voce nao está logado em uma conta para sair'); window.location.href = '../html/home.php';</script>";
+
+  exit;
+}
+
+unset($_SESSION["email"]);
 unset($_SESSION["nome"]);
 session_destroy();
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -46,8 +54,13 @@ session_destroy();
     }
 
     @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
     }
 
     .text {
