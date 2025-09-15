@@ -324,7 +324,8 @@
     input:focus {
       outline: none;
     }
-  .containerOla {
+
+    .containerOla {
       display: flex;
       width: 350px;
       word-wrap: normal;
@@ -344,7 +345,7 @@
     }
 
     .containerOla:hover {
-        background-position: right;
+      background-position: right;
     }
 
     .fraseCadastro {
@@ -352,14 +353,15 @@
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       font-size: 18px;
     }
-    
+
     .titleOla {
       max-width: 350px;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       font-size: 5vh;
       margin-top: -.2vh;
     }
-    .btnIrCadastro{
+
+    .btnIrCadastro {
       padding: 5px;
       border-radius: 10px;
       border: none;
@@ -368,9 +370,92 @@
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       cursor: pointer;
     }
-    .btnIrCadastro:hover{
+
+    .btnIrCadastro:hover {
       transition: .5s;
       padding: 10px;
+    }
+
+    @media (max-width: 1150px) {
+      .containerOla {
+        width: 280px;
+        padding: 2vw 2vw 0vw 2vw;
+
+        h1 {
+          font-size: 20px;
+        }
+      }
+
+      .loginContainer {
+        width: 280px;
+        padding: 2vw 2vw 0vw 2vw;
+
+        h1 {
+          font-size: 20px;
+        }
+      }
+    }
+
+    @media (max-width: 900px) {
+      .containerOla {
+        width: 200px;
+        padding: 2vw 2vw 0vw 2vw;
+
+        h1 {
+          font-size: 16px;
+        }
+      }
+
+      .loginContainer {
+        width: 28 0px;
+        padding: 2vw 2vw 0vw 2vw;
+
+        h1 {
+          font-size: 20px;
+        }
+      }
+
+      .loginForm button {
+        padding: 8px;
+        width: 234px;
+      }
+
+      .loginForm #inputEmail,
+      #inputSenha {
+        padding: 12px 12px 12px 0;
+        width: 220px;
+      }
+    }
+
+    @media (max-width: 750px) {
+      .containerOla {
+        width: 200px;
+        padding: 2vw 2vw 0vw 2vw;
+
+        h1 {
+          font-size: 14px;
+        }
+      }
+
+      .loginContainer {
+        width: 220px;
+        padding: 2vw 0vw 0vw 0vw;
+
+        h1 {
+          font-size: 20px;
+        }
+      }
+
+      .loginForm button {
+        padding: 8px;
+        width: 234px;
+      }
+
+      .loginForm #inputEmail,
+      #inputSenha {
+        padding: 12px 12px 12px 0;
+        width: 220px;
+      }
     }
   </style>
 </head>
