@@ -92,6 +92,58 @@ session_start(); ?>
       .footer li {
         font-size: 15px;
       }
+
+      .imgTenis {
+        width: 180px;
+      }
+    }
+
+    @media (max-width: 1000px) {
+      .imgTenis {
+        width: 160px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .footer li {
+        font-size: 12px;
+      }
+
+      .imgTenis {
+        width: 130px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .footer li {
+        font-size: 10px;
+      }
+
+      .imgTenis {
+        width: 110px;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .footer li {
+        font-size: 7px;
+      }
+
+      .imgTenis {
+        width: 110px;
+      }
+    }
+
+    @media (max-width: 690px) {
+      .cabecalho li {
+        font-size: 15px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      .footer li {
+        font-size: 15px;
+      }
     }
 
     @media (max-width: 900px) {
@@ -118,24 +170,6 @@ session_start(); ?>
       }
     }
 
-    @media (max-width: 1000px) {
-      .imgTenis {
-        width: 130px;
-      }
-    }
-
-    @media (max-width: 900px) {
-      .imgTenis {
-        width: 130px;
-      }
-    }
-
-    @media (max-width: 690px) {
-      .imgTenis {
-        width: 100px;
-      }
-    }
-
     @media (max-width: 490px) {
       .imgTenis {
         width: 100px;
@@ -150,7 +184,7 @@ session_start(); ?>
     }
 
     @media (max-width: 650px) {
-      .cabecalho ul {
+      .cabecalho ul>li {
         display: none;
       }
 
@@ -175,13 +209,28 @@ session_start(); ?>
       text-decoration: none;
       list-style: none;
       padding-bottom: 2vw;
-      z-index: 1;
+      z-index: 2;
     }
 
     .menu li {
-      display: flex;
-      margin-left: 2vw;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      margin-left: 5vh;
+      font-weight: 600;
+      transition: .5s;
+      font-size: 18px;
+      padding: 5px;
+      border-radius: 8px;
     }
+
+    .menu li:hover {
+      transition: .5s;
+      background-color: rgb(34, 34, 34);
+      cursor: pointer;
+      border-radius: 8px;
+      padding: 5px;
+      color: rgb(255, 240, 24);
+    }
+
 
     .showMenu {
       transition: .5s;
@@ -321,45 +370,6 @@ session_start(); ?>
       display: inline-block;
     }
 
-    .fotosSection1 {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      /* 4 colunas no PC */
-      gap: 20px;
-      justify-items: center;
-    }
-
-    .swiper-slide_ {
-      width: 100%;
-      max-width: 250px;
-      height: auto;
-    }
-
-    /* Tablet grande */
-    @media (max-width: 1024px) {
-      .fotosSection1 {
-        grid-template-columns: repeat(3, 1fr);
-        /* 3 colunas */
-      }
-    }
-
-    /* Tablet pequeno / celular grande */
-    @media (max-width: 768px) {
-      .fotosSection1 {
-        grid-template-columns: repeat(2, 1fr);
-        /* 2 colunas */
-      }
-    }
-
-    /* Celular pequeno */
-    @media (max-width: 480px) {
-      .fotosSection1 {
-        grid-template-columns: repeat(1, 1fr);
-        /* 1 coluna */
-      }
-    }
-
-
     .swiper-slide_ img {
       width: 250px;
       height: 350px;
@@ -398,6 +408,7 @@ session_start(); ?>
       justify-self: center;
       padding-left: 10vw;
       text-align: center;
+      padding-top: 5vw;
     }
 
     @media (max-width: 1000px) {
@@ -409,6 +420,59 @@ session_start(); ?>
     @media (max-width: 900px) {
       .fraseSuaCaminhada {
         font-size: 25px;
+      }
+    }
+
+    .fotosSection1 {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      /* 4 colunas no PC */
+      gap: 20px;
+      justify-items: center;
+    }
+
+    .swiper-slide_ {
+      width: 100%;
+      max-width: 250px;
+      height: auto;
+    }
+
+    /* Tablet grande */
+    @media (max-width: 1024px) {
+      .fotosSection1 {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 colunas */
+      }
+
+      .swiper-slide_ img {
+        width: 200px;
+        height: 300px;
+        padding-left: 30px;
+      
+      }
+    }
+
+    /* Tablet pequeno / celular grande */
+    @media (max-width: 768px) {
+      .fotosSection1 {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 colunas */
+      }
+      .swiper-slide_ img {
+        width: 250px;
+        height: 370px;
+        padding-left: 30px;
+      }
+      .produtos{
+        margin-left: 12vw;
+      }
+    }
+
+    /* Celular pequeno */
+    @media (max-width: 480px) {
+      .fotosSection1 {
+        grid-template-columns: repeat(1, 1fr);
+        /* 1 coluna */
       }
     }
   </style>
@@ -433,6 +497,8 @@ session_start(); ?>
           session_destroy();
         }
         ?>
+      </ul>
+      <div class="btnMenu" onclick="showMenu()">&#9776;</div>
 
     </header>
 
@@ -455,7 +521,9 @@ session_start(); ?>
 
       <div class="barraOpcoes">
 
-
+        <div class="containerSuaCaminhada">
+          <p class="fraseSuaCaminhada">A sua caminhada pede conforto</p>
+        </div>
 
         <ul class="ulOpcoes">
           <li>Esporte</li>
@@ -464,10 +532,6 @@ session_start(); ?>
           <li>Street Wear</li>
           <li>Formal</li>
         </ul>
-
-        <div class="containerSuaCaminhada">
-          <p class="fraseSuaCaminhada">A sua caminhada pede conforto</p>
-        </div>
       </div>
 
       <nav class="produtos">
