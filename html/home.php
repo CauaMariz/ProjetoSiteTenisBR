@@ -309,15 +309,17 @@ session_start(); ?>
     }
 
     .produtos {
-      width: auto;
+      width: fit-content;
       height: fit-content;
-      display: flexbox;
+      display: flex;
       overflow: hidden;
+      margin: 0 auto;
+      justify-content: center;
       margin-left: 4.5vw;
     }
 
     .section1 {
-      max-width: 80vh;
+      max-width: fit-content;
       display: inline-block;
     }
 
@@ -333,6 +335,20 @@ session_start(); ?>
       width: 100%;
       max-width: 250px;
       height: auto;
+    }
+
+    @media (max-width: 1610px) {
+      .fotosSection1 {
+        grid-template-columns: repeat(5, 1fr);
+        /* 3 colunas */
+      }
+    }
+
+    @media (max-width: 1340px) {
+      .fotosSection1 {
+        grid-template-columns: repeat(4, 1fr);
+        /* 3 colunas */
+      }
     }
 
     /* Tablet grande */
@@ -410,7 +426,7 @@ session_start(); ?>
       <li onclick="location.href = 'loginPag.php'">Login</li>
       <li onclick="location.href = 'cadastroPag.php'">Cadastrar</li>
       <li>Configurações</li>
-      <li onclick = "location.href = '../php/logout.php'">Sair</li>
+      <li onclick="location.href = '../php/logout.php'">Sair</li>
     </div>
 
     <div class="swiper mySwiper">

@@ -357,16 +357,17 @@ session_start(); ?>
     }
 
     .produtos {
-      width: auto;
+      width: fit-content;
       height: fit-content;
-      display: flexbox;
+      display: flex;
       overflow: hidden;
-      margin-left: 4.5vw;
+      margin: 0 auto;
       margin-top: 5vw;
+      justify-content: center;
     }
 
     .section1 {
-      max-width: 80vh;
+      max-width: fit-content;
       display: inline-block;
     }
 
@@ -437,6 +438,20 @@ session_start(); ?>
       height: auto;
     }
 
+    @media (max-width: 1610px) {
+      .fotosSection1 {
+        grid-template-columns: repeat(5, 1fr);
+        /* 3 colunas */
+      }
+    }
+
+    @media (max-width: 1340px) {
+      .fotosSection1 {
+        grid-template-columns: repeat(4, 1fr);
+        /* 3 colunas */
+      }
+    }
+
     /* Tablet grande */
     @media (max-width: 1024px) {
       .fotosSection1 {
@@ -448,7 +463,7 @@ session_start(); ?>
         width: 200px;
         height: 300px;
         padding-left: 30px;
-      
+
       }
     }
 
@@ -458,12 +473,14 @@ session_start(); ?>
         grid-template-columns: repeat(2, 1fr);
         /* 2 colunas */
       }
+
       .swiper-slide_ img {
         width: 250px;
         height: 370px;
         padding-left: 30px;
       }
-      .produtos{
+
+      .produtos {
         margin-left: 12vw;
       }
     }
