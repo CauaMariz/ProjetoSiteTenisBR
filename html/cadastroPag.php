@@ -206,7 +206,7 @@
     }
 
     .footer {
-     width: 100%;
+      width: 100%;
       display: flex;
       flex-wrap: wrap;
       background-color: rgba(221, 221, 221, 1);
@@ -342,7 +342,7 @@
     }
 
     .containerOla:hover {
-        background-position: right;
+      background-position: right;
     }
 
     .fraseCadastro {
@@ -382,8 +382,12 @@
       <h1 class="title" onclick="location.href = 'home.php'">Tenis BR</h1>
       <ul>
         <li>Ver Mais</li>
-        <li onclick="location.href = 'loginPag.php'">Login</li>
-        <li onclick="location.href = 'cadastroPag.php'">Cadastrar</li>
+        <?php
+        if (!isset($_SESSION["email"]) && !isset($_SESSION["nome"])) {
+          echo "<li onclick=\"location.href = 'loginPag.php'\">Login</li>";
+          echo "<li onclick=\"location.href = 'cadastroPag.php'\">Cadastrar</li>";
+        }
+        ?>
         <li>Configurações</li>
         <li>Sair</li>
       </ul>

@@ -1,17 +1,3 @@
-<?php
-session_start();
-
-if (!isset($_SESSION["email"]) || !isset($_SESSION["nome"])) {
- echo "<script>alert('Voce nao está logado em uma conta para sair'); window.location.href = '../html/home.php';</script>";
-
-  exit;
-}
-
-unset($_SESSION["email"]);
-unset($_SESSION["nome"]);
-session_destroy();
-
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -74,7 +60,21 @@ session_destroy();
 
 <body>
   <div class="title">TenisBR</div>
+  <?php
+  session_start();
 
+  if (!isset($_SESSION["email"]) || !isset($_SESSION["nome"])) {
+    echo "<script>alert('Voce nao está logado em uma conta para sair'); window.location.href = '../html/home.php';</script>";
+
+    exit;
+  }
+
+  unset($_SESSION["email"]);
+  unset($_SESSION["nome"]);
+  session_destroy();
+
+  ?>
+  
   <div class="container">
     <div class="spinner"></div>
     <div class="text">Saindo...</div>
