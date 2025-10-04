@@ -260,6 +260,7 @@ session_start(); ?>
       width: 100%;
       height: auto;
       display: block;
+      overflow: hidden;
     }
 
     .fraseAproveite {
@@ -321,6 +322,7 @@ session_start(); ?>
     .section1 {
       max-width: fit-content;
       display: inline-block;
+      
     }
 
     .fotosSection1 {
@@ -329,6 +331,7 @@ session_start(); ?>
       /* 4 colunas no PC */
       gap: 20px;
       justify-items: center;
+      
     }
 
     .swiper-slide_ {

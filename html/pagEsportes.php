@@ -308,6 +308,7 @@ session_start(); ?>
       width: 100%;
       height: auto;
       display: block;
+      overflow: hidden;
     }
 
     .fraseAproveite {
